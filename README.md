@@ -4,6 +4,8 @@ This project is a Backend API that processes a CSV file of transactions, uses an
 
 **Author:** [defaultname-ayan](https://deafultayan.dev)
 **Technical Review Video:** [Watch on YouTube](https://youtu.be/Gjlm1WWrAHg)
+youtube link : https://youtu.be/Gjlm1WWrAHg
+portfolio : https://deafultayan.dev
 
 ## Architecture & Tech Stack
 
