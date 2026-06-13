@@ -23,13 +23,13 @@ def test_parse_amount():
 
 
 def test_clean_transactions_csv():
-    # Create a temporary CSV file
+ # create csv for testing temporary
     with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.csv') as tmp:
         writer = csv.writer(tmp)
         writer.writerow(["txn_id", "date", "merchant", "amount", "currency", "status", "category", "account_id", "notes"])
         writer.writerow(["1", "15-05-2024", "Amazon", "$150.00", "usd", "success", "Shopping", "acc1", ""])
         writer.writerow(["2", "2024/05/16", "Swiggy", "500", "inr", "pending", "", "acc1", "Lunch"])
-        writer.writerow(["1", "15-05-2024", "Amazon", "$150.00", "usd", "success", "Shopping", "acc1", ""]) # Duplicate
+        writer.writerow(["1", "15-05-2024", "Amazon", "$150.00", "usd", "success", "Shopping", "acc1", ""]) # this is the duplcate
 
     try:
         records, raw_count, clean_count = clean_transactions_csv(tmp.name)

@@ -23,7 +23,7 @@ def test_classify_missing_categories_batch(mock_gemini):
     
     assert processed[0]["category"] == "Food"
     assert processed[0]["llm_failed"] is False
-    assert processed[1]["category"] == "Shopping" # Unchanged
+    assert processed[1]["category"] == "Shopping" #is unchanged
 
 
 @patch('app.services.llm_service.call_gemini_api')
