@@ -5,7 +5,7 @@ from app.config import settings
 
 @patch('app.services.llm_service.call_gemini_api')
 def test_classify_missing_categories_batch(mock_gemini):
-    # Mock the LLM response
+    # llm mock resposne 
     mock_gemini.return_value = [
         {"txn_id": "1", "category": "Food"}
     ]
@@ -19,7 +19,6 @@ def test_classify_missing_categories_batch(mock_gemini):
     
     processed = classify_missing_categories_batch(records)
     
-    # Assert LLM was called only for uncategorised
     mock_gemini.assert_called_once()
     
     assert processed[0]["category"] == "Food"
