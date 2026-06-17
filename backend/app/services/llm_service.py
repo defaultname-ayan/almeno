@@ -10,7 +10,7 @@ def call_gemini_api(prompt: str) -> dict | list | None:
     api_key = settings.gemini_api_key
     if not api_key:
         return None
-    
+#chosing rest api for full control over #retries and json parsing plus lowering #dependency count
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
     headers = {"Content-Type": "application/json"}
     payload = {
